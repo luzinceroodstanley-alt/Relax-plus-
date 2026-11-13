@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RELAX PLUS</title>
+<style>
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;background:#eef2f6;color:#1f2937;padding-bottom:30px}
+.hd{background:#0a4296;color:#fff;padding:15px;display:flex;justify-content:space-between;align-items:center}
+.hd h1{margin:0;font-size:20px}
+.btop{background:#f5b400;color:#111;border:none;padding:8px 13px;border-radius:7px;font-weight:bold;cursor:pointer}
+.sb{text-align:center;font-size:12px;padding:6px;background:#fee2e2;color:#991b1b;font-weight:bold}
+.sb.ok-js{background:#dcfce7;color:#166534}
+.tabs{display:flex;background:#fff;border-bottom:1px solid #d1d5db}
+.tab{flex:1;text-align:center;padding:12px 4px;font-size:13.5px;font-weight:bold;color:#4b5563;cursor:pointer;border-bottom:3px solid transparent}
+.tab.act{color:#0a4296;border-bottom:3px solid #0a4296;background:#f0f6ff}
+.box{padding:15px;max-width:500px;margin:auto}
+.sec{display:none}.sec.act{display:block}
+.cd{background:#fff;padding:18px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,.07);margin-bottom:15px}
+h2{text-align:center;font-size:18px;margin:0 0 12px;color:#0a4296}
+h3{font-size:15px;margin:0 0 10px;color:#0a4296;border-bottom:1px solid #eee;padding-bottom:5px}
+label{display:block;font-weight:bold;margin-top:12px;font-size:13.5px;text-align:center}
+input{width:100%;padding:11px;margin-top:5px;border:1px solid #ccc;border-radius:7px;font-size:15px;background:#f9fafb}
+.rw{display:flex;gap:8px}.rw>div{flex:1}
+.nt{background:#fff4e5;border-left:4px solid #f97316;padding:11px;margin-top:15px;font-size:12.5px;line-height:1.45}
+.btn{display:block;width:100%;padding:13px;margin-top:10px;border:none;border-radius:7px;font-size:14.5px;font-weight:bold;cursor:pointer;text-align:center;text-decoration:none}
+.bs{background:#0a4296;color:#fff}.bw{background:#25D366;color:#fff}.bc{background:#4b5563;color:#fff}
+.bsm{padding:7px 11px;font-size:12px;width:auto;margin-top:6px;display:inline-block}
+.st{margin-top:10px;padding:9px;border-radius:7px;text-align:center;font-weight:bold;display:none;font-size:13px}
+.ok{background:#dcfce7;color:#166534;display:block}.er{background:#fee2e2;color:#991b1b;display:block}
+.it{border:1px solid #e5e7eb;border-radius:7px;padding:10px;margin-bottom:8px;background:#f9fafb;font-size:13px}
+.bg{display:inline-block;padding:2px 7px;border-radius:5px;font-size:11px;font-weight:bold}
+.bo{background:#fef3c7;color:#92400e}.bi{background:#dcfce7;color:#166534}
+.totbox{background:#dcfce7;border:1px solid #86efac;padding:12px;border-radius:8px;text-align:center;margin-top:12px}
+.totbox strong{display:block;font-size:18px;color:#166534;margin-top:3px}
+@media print{.tabs,.btn,.np,#cdeyo,.sb{display:none!important}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="hd"><h1>RELAX PLUS</h1><button type="button" class="btop np" onclick="window.print()">Enprimant</button></div>
+<div id="sst" class="sb np">JavaScript Bloke : Ouvri sou GitHub / Netlify</div>
+<div class="tabs np">
+  <div class="tab act" id="tb-b" onclick="go('b')">Lokasyon Bakop</div>
+  <div class="tab" id="tb-r" onclick="pinPage()">Kontwol & Rapo</div>
+</div>
+<div class="box">
+  <div id="sc-p" class="sec"><div class="cd">
+    <h2>AKSE PWOTEJE (ADMIN)</h2>
+    <label>Antre Kod PIN 4 Chif Ou an:</label>
+    <input type="password" id="pin" maxlength="4" inputmode="numeric" placeholder="****" style="text-align:center;font-size:22px;letter-spacing:8px">
+    <div id="mp" class="st"></div>
+    <button type="button" class="btn bs" onclick="verifPin()">Ouvri Kontwol la</button>
+  </div></div>
+
+  <div id="sc-b" class="sec act">
+    <div class="cd">
+      <h2>SEVIS LOKASYON</h2>
+      <label>Dat ak Le:</label><input type="datetime-local" id="bd" oninput="majWA()">
+      <label>Non Konple:</label><input type="text" id="bn" placeholder="Ekri non an" oninput="majWA()">
+      <label>Nimewo Telefon (WhatsApp):</label><input type="tel" id="bt" placeholder="Egzanp: 34123456" oninput="majWA()">
+      <label>Nimewo / Model Bakop:</label><input type="text" id="bm" placeholder="Ekri model bakop la" oninput="majWA()">
+      <label>Pyes oswa Kob Garanti:</label><input type="text" id="bg" placeholder="Ekri pyes oswa kob garanti a" oninput="majWA()">
+      <div class="nt"><strong>Regleman Sevis RELAX PLUS :</strong> Mesi deske ou chwazi sevis nou an. Lokasyon an fet pou yon dire <strong>24 edtan</strong> (100 Goud). Kou 24 edtan an fini pase, w ap gen pou peye <strong>100 Goud anplis pou chak nouvo 24 edtan ki komanse</strong>. Tanpri pran swen bakop la pandan tout tan li nan men ou. Nan ka kote aparey la ta pran dlo oswa sibi nenpot domaj, RELAX PLUS ap kenbe pyes oswa kob garanti ou kite a jiskaske ou ranplase li ak yon lot bakop menm model la ki nan bon eta. Mesi pou konpreyansyon ou ak konfyans ou!</div>
+      <div id="mb" class="st"></div>
+      <button type="button" class="btn bs" onclick="svB()">Anrejistre Lokasyon an</button>
+      <a id="btn-wa" class="btn bw" href="https://whatsapp.com*" target="_blank">Pataje Fakti a sou WhatsApp</a>
+      <button type="button" class="btn bc" onclick="kopB()">Kopye Fakti a</button>
+    </div>
+    <div class="cd" id="cdeyo"><h3>Bakop ki Deyo Kounye a</h3><div id="ldeyo">Pa gen okenn bakop deyo.</div></div>
+  </div>
+
+  <div id="sc-r" class="sec">
+    <div class="cd">
+      <h2>ENVANTE & RAPO A DISTANS</h2>
+      <div class="rw"><div><label>Soti nan Dat:</label><input type="date" id="rd"></div><div><label>Rive nan Dat:</label><input type="date" id="rf"></div></div>
+      <button type="button" class="btn bs" onclick="syncR()">Aktyalize & Afiche Rapo</button>
+      <a id="btn-war" class="btn bw" href="https://whatsapp.com*" target="_blank">Pataje Rapo a sou WhatsApp</a>
+      <div class="totbox"><span>TOTAL RESET PERYOD LA</span><strong id="tjn">0 Goud</strong></div>
+    </div>
+    <div class="cd"><h3>Lis Lokasyon yo</h3><div id="drp">Chwazi dat yo.</div></div>
+  </div>
+</div>
+<script>
+var DB="https://firebaseio.com",PIN="2004",okP=false;
+function ini(){
+  var sb=document.getElementById('sst');
+  sb.textContent="Sistem Pare (JavaScript Aktif)";
+  sb.className="sb ok-js np";
+  var d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());
+  document.getElementById('bd').value=d.toISOString().slice(0,16);
+  var j=d.toISOString().slice(0,10);
+  document.getElementById('rd').value=j;document.getElementById('rf').value=j;
+  majWA();shD();pull();
+}
+function getTxtB(){
+  var d=document.getElementById('bd').value.replace('T',' ');
+  var n=document.getElementById('bn').value.trim()||"Pa ekri";
+  var t=document.getElementById('bt').value.trim()||"Pa ekri";
+  var m=document.getElementById('bm').value.trim()||"Pa ekri";
+  var g=document.getElementById('bg').value.trim()||"Okenn";
+  return "*RELAX PLUS - SEVIS LOKASYON*\n----------------------------------\n*Dat / Le:* "+d+"\n*Non:* "+n+"\n*Telefon:* "+t+"\n*Model Bakop:* "+m+"\n*Garanti:* "+g+"\n*Tarif:* 100 Goud / 24h\n----------------------------------\n*Regleman Sevis RELAX PLUS :*\nMesi deske ou chwazi sevis nou an. Lokasyon an fet pou yon dire 24 edtan (100 Goud). Kou 24 edtan an fini pase, w ap gen pou peye 100 Goud anplis pou chak nouvo 24 edtan ki komanse. Tanpri pran swen bakop la pandan tout tan li nan men ou. Nan ka kote aparey la ta pran dlo oswa sibi nenpot domaj, RELAX PLUS ap kenbe pyes oswa kob garanti ou kite a jiskaske ou ranplase li ak yon lot bakop menm model la ki nan bon eta. Mesi pou konpreyansyon ou ak konfyans ou!";
+}
+function majWA(){
+  var t=document.getElementById('bt').value.replace(/[^0-9]/g,'');
+  if(t.length===8)t='509'+t;
+  var txt=encodeURIComponent(getTxtB());
+  document.getElementById('btn-wa').href=t?"https://whatsapp.com"+t+"&text="+txt:"https://whatsapp.com"+txt;
+}
+function kopB(){
+  var txt=getTxtB();
+  if(navigator.clipboard){navigator.clipboard.writeText(txt).then(function(){msg('mb','Fakti a kopye! Ou ka kole l nan WhatsApp.','ok');});}
+  else{msg('mb','Sèvi ak bouton vèt WhatsApp la.','ok');}
+}
+function push(){
+  if(!navigator.onLine)return;
+  try{
+    fetch(DB,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({b:JSON.parse(localStorage.getItem('rxb')||'[]')})})
+    .then(function(){document.getElementById('sst').textContent="Sistem Pare & Senkronize";});
+  }catch(e){}
+}
+function pull(cb){
+  if(!navigator.onLine){if(cb)cb();return;}
+  try{
+    fetch(DB).then(function(r){return r.json();}).then(function(d){
+      if(d&&d.b){localStorage.setItem('rxb',JSON.stringify(d.b));shD();}
+      document.getElementById('sst').textContent="Sistem Pare (Done a jou)";
+      if(cb)cb();
+    }).catch(function(){if(cb)cb();});
+  }catch(e){if(cb)cb();}
+}
+function go(k){
+  document.getElementById('tb-b').className='tab'+(k==='b'?' act':'');
+  document.getElementById('tb-r').className='tab'+(k==='r'?' act':'');
+  document.getElementById('sc-b').className='sec'+(k==='b'?' act':'');
+  document.getElementById('sc-r').className='sec'+(k==='r'?' act':'');
+  document.getElementById('sc-p').className='sec';
+  if(k==='b')shD();if(k==='r')syncR();
+}
+function pinPage(){
+  if(okP){go('r');return;}
+  document.getElementById('tb-b').className='tab';
+  document.getElementById('tb-r').className='tab act';
+  document.getElementById('sc-b').className='sec';
+  document.getElementById('sc-r').className='sec';
+  document.getElementById('sc-p').className='sec act';
+  document.getElementById('pin').value='';
+}
+function verifPin(){
+  if(document.getElementById('pin').value.trim()===PIN){okP=true;go('r');}
+  else msg('mp','Kod PIN nan pa bon!','er');
+}
+function msg(id,t,c){
+  var e=document.getElementById(id);e.textContent=t;e.className='st '+c;
